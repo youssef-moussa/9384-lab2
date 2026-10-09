@@ -1,7 +1,23 @@
 #!/bin/bash
 
 scan() {
-    echo "scanning"
+    for file in "$dir"/*
+    do
+        malicious=0
+        case "$file" in (*.exe|*.bat|*.vbs|*.scr|*.ps1)
+            malicious=1;;
+        esac
+        if grep -qiE "virus|trojan|malware|worm|ransomware" "$file"
+        then
+            malicious=1
+        fi
+        if [ "$malicious" -eq 1 ]
+        then
+            echo "$file is malicious and it is DELETED"
+            cp "$file" "$malicious_dir"
+            rm "$file"
+        fi
+    done
 }
 
 
