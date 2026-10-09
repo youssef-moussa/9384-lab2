@@ -1,0 +1,4 @@
+total 12
+-rw-rw-r-- 1 vboxuser vboxuser 16 Oct  9 16:28 bad.txt
+-rw-rw-r-- 1 vboxuser vboxuser 12 Oct  9 16:28 normal.txt
+-rw-rw-r-- 1 vboxuser vboxuser 13 Oct  9 16:28 setup.exe
